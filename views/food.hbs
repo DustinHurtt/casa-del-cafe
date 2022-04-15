@@ -1,9 +1,9 @@
 
 <ul>
-    {{#each food}}
+    {{#each newFoods}}
 
-    <h3>{{this.food}}</h3>
-    <p> </p>
+    <h3>{{this.name}}</h3>
+    <p> {{this.price}}</p>
     
     <a href="/food/{{this._id}}"> Food </a>
     {{/each}}

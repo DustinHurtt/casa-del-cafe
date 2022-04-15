@@ -35,11 +35,18 @@ app.get("/", function (req, res, next) {
 app.get('/about', function(req, res, next) {
   res.render('about');
 });
+
 app.get('/coffee', function(req, res, next) {
   Coffee.find()
   .then(function(newCoffees){
-  res.render('coffee', {newCoffees: newCoffees}); 
+    Drinks.find()
+    .then(function(newDrinks){
+      res.render('coffee', {newCoffees: newCoffees}, {newDrinks: newDrinks}) })
+  ; 
   })
+  .catch(function (error) {
+    console.log(error);
+  });
 });
 
 app.get('/coffee/:details', function(req, res, next) {
@@ -50,16 +57,21 @@ app.get('/coffee/:details', function(req, res, next) {
 })
   .catch(function (error) {
     console.log(error);
-});
-
+  });
 })
 
 
-
-
 app.get('/food', function(req, res, next) {
-  res.render('food');
+  Food.find()
+  .then(function(newFoods){
+    res.render('food', {newFoods: newFoods})
+  })
+  .catch(function (error) {
+    console.log(error);
+
+  } );
 });
+
 app.get('/entertainment', function(req, res, next) {
   res.render('entertainment');
 });

@@ -47,6 +47,22 @@ app.get('/entertainment', function(req, res, next) {
 app.get('/contact', function(req, res, next) {
   res.render('contact');
 });
+app.get('/coffee-create', function(req, res, next) {
+  res.render('coffee-create');
+});
+app.get('/food-create', function(req, res, next) {
+  res.render('food-create');
+});
+app.get('/drinks-create', function(req, res, next) {
+  res.render('drinks-create');
+});
+app.get('/coffee-details', function(req, res, next) {
+  res.render('coffee-details');
+});
+app.get('/food-details', function(req, res, next) {
+  res.render('food-details');
+});
+
 
 
 

@@ -65,9 +65,7 @@ app.get('/food-details', function(req, res, next) {
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -143,6 +141,10 @@ app.post("/food-create", function (req, res, next) {
     });
 
   // res.render("index", { title: "Express" });
+});
+
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
 mongoose

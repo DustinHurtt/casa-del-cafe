@@ -24,9 +24,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
-app.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+app.get("/home", function (req, res, next) {
+  res.render("home-landing", { title: "Casa del Cafe" });
 });
+
+app.get('/about', function(req, res, next) {
+  res.render('about');
+});
+app.get('/coffee', function(req, res, next) {
+  res.render('coffee');
+});
+app.get('/food', function(req, res, next) {
+  res.render('food');
+});
+app.get('/entertainment', function(req, res, next) {
+  res.render('entertainment');
+});
+app.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
+
 
 
 // catch 404 and forward to error handler

@@ -36,8 +36,23 @@ app.get('/about', function(req, res, next) {
   res.render('about');
 });
 app.get('/coffee', function(req, res, next) {
-  res.render('coffee');
+  Coffee.find()
+  .then(function(newCoffees){
+  res.render('coffee', {newCoffees: newCoffees}); 
+  })
 });
+
+app.get('/users', function(req, res, next) {
+  User.find()
+  .then(function(newUsers){
+  res.render('users', {newUsers: newUsers});
+  })
+  .catch(function(error){
+    console.log(error)
+  })  
+});
+
+
 app.get('/food', function(req, res, next) {
   res.render('food');
 });

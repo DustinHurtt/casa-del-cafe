@@ -41,8 +41,8 @@ app.get('/coffee', function(req, res, next) {
   .then(function(newCoffees){
     Drinks.find()
     .then(function(newDrinks){
-      res.render('coffee', {newCoffees: newCoffees}, {newDrinks: newDrinks}) })
-  ; 
+      res.render('coffee', {newCoffees: newCoffees, newDrinks: newDrinks}) })
+   
   })
   .catch(function (error) {
     console.log(error);

@@ -18,7 +18,7 @@ const coffeeSchema =  new Schema({
     price: {
         type: Number,
         required: true
-    },
+    }, 
 })
 
 const Coffee =  model("coffee", coffeeSchema)

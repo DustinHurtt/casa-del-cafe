@@ -1,9 +1,21 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-image:url(/images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
-  color: #00B7FF;
+  color:blue;
+ 
 }
+
+.nav{
+  text-align:left;
+  
+}
+
+
 

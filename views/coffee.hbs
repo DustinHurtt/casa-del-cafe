@@ -1,20 +1,28 @@
-
 <h2>Our Coffee Selection</h2>
 
 <ul>
     {{#each newCoffees}}
 
     <p> </p>
-    <img src="{{this.image_url}}" alt="imagesb">
-
    <p> {{this.country}} </p>
    <p> {{this.price}} </p>
-
-    
     <a href="/coffee/{{this._id}}"> Details </a>
     {{/each}}
-    <hr>
+</ul>
+<hr>
+<ul>
+    {{#each newDrinks}}
+
+    <p> {{this.name}} </p>
+    <p> {{this.tempeture}} </p>
+    <p> {{this.description}} </p>
+   <p> {{this.price}} </p>
+
+    <a href="/coffee/{{this._id}}"> Details </a>
+    {{/each}}
 </ul>
 
-<img src="/images/coffee2.jpg/>
+<div class="coffee"> 
+</div>
+
 

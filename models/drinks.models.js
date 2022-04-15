@@ -7,7 +7,7 @@ const drinksSchema =  new Schema({
     },
     temperature: {
         type: String,
-        enum: ["Hot", "Iced", "Salads", "Soups", "Desserts"]
+        enum: ["Hot", "Iced"]
     },
     description: {
         type: String

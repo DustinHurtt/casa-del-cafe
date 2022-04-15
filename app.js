@@ -48,8 +48,6 @@ app.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

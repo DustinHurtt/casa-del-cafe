@@ -1,17 +1,17 @@
-<h2>This is the coffee page</h2>
+<h2>Our Coffee Selection</h2>
 <ul>
     {{#each newCoffees}}
 
-    <h3>{{this.coffee}}</h3>
     <p> </p>
     <img src="{{this.image_url}}" alt="imagesb">
 
-   <p> {{this.description}} </p>
-   <p> {{this.tagline}} </p>
-   <hr>
+   <p> {{this.country}} </p>
+   <p> {{this.price}} </p>
+
     
-    <a href="/coffee/{{this._id}}"> All our different types of coffee </a>
+    <a href="/coffee/{{this._id}}"> Details </a>
     {{/each}}
+    <hr>
 </ul>
 
 <img src="/images/coffee.jpeg" />

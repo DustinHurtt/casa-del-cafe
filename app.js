@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
-app.get("/home", function (req, res, next) {
+app.get("/", function (req, res, next) {
   res.render("home-landing", { title: "Casa del Cafe" });
 });
 

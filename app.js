@@ -42,15 +42,15 @@ app.get('/coffee', function(req, res, next) {
   })
 });
 
-app.get('/users', function(req, res, next) {
-  User.find()
-  .then(function(newUsers){
-  res.render('users', {newUsers: newUsers});
-  })
-  .catch(function(error){
-    console.log(error)
-  })  
-});
+// app.get('/users', function(req, res, next) {
+//   User.find()
+//   .then(function(newUsers){
+//   res.render('users', {newUsers: newUsers});
+//   })
+//   .catch(function(error){
+//     console.log(error)
+//   })  
+// });
 
 
 app.get('/food', function(req, res, next) {

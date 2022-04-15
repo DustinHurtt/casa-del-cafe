@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Food = require('../models/Food.models')
+const Food = require('../models/food.models')
 
 let newFoods = [
     {
@@ -37,7 +37,7 @@ let newFoods = [
   },
   {
     name: "Fruit Tart" ,
-    category: "Dessert",
+    category: "Desserts",
     description: "A light and sweet dessert.",
     ingredients: "fruit, berries, flour, eggs, sugar",
     calories: 400,
@@ -56,7 +56,7 @@ let newCoffees = [
 
   },
   {
-    country: "Brazillian" ,
+    country: "Brazilian" ,
     roast: "Dark",
     description: "Therefore, medium-dark roast is preferred, as a dark roast can project an ashy, bitter flavor. Premium Brazil coffee is low in acidity, exhibits a nutty sweet flavor, and is often bittersweet with a chocolaty roast taste.",
     price: 6.50,
@@ -100,13 +100,13 @@ let newDrinks = [
   },
   {
     name: "Latte" ,
-    temperature: "Cold",
+    temperature: "Iced",
     description: " milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
     price: 5.50,
   },
   {
     name: "Mocha" ,
-    temperature: "Cold",
+    temperature: "Iced",
     description: "is combined with a chocolate powder or syrup, followed by milk or cream. ",
     price: 6.50,
   },
@@ -118,10 +118,7 @@ let newDrinks = [
   }
   ]
 
-mongoose
-  .connect('mongodb://localhost/CasaDelCafe') 
-  .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
-  .catch(err => console.error('Error connecting to mongo', err));
+
 
 Coffee.create(newCoffees)
 .then(function(results){
@@ -152,3 +149,8 @@ Drinks.create(newDrinks)
     console.log("Something went wrong", error.message)
     mongoose.connection.close()
 })
+
+mongoose
+  .connect('mongodb://localhost/CasaDelCafe') 
+  .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
+  .catch(err => console.error('Error connecting to mongo', err));

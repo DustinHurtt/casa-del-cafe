@@ -123,9 +123,29 @@ mongoose
   .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
   .catch(err => console.error('Error connecting to mongo', err));
 
-User.create(newUsers)
+Coffee.create(newCoffees)
 .then(function(results){
-    console.log("Users Saved", results)
+    console.log("Coffees Saved", results)
+    mongoose.connection.close()
+})
+.catch (function(error){
+    console.log("Something went wrong", error.message)
+    mongoose.connection.close()
+})
+
+Food.create(newFoods)
+.then(function(results){
+    console.log("Foods Saved", results)
+    mongoose.connection.close()
+})
+.catch (function(error){
+    console.log("Something went wrong", error.message)
+    mongoose.connection.close()
+})
+
+Drinks.create(newDrinks)
+.then(function(results){
+    console.log("Drinks Saved", results)
     mongoose.connection.close()
 })
 .catch (function(error){

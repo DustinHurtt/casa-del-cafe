@@ -80,6 +80,7 @@ app.use(function(err, req, res, next) {
 
 app.post("/coffee-create", function (req, res, next) {
   //This is just a function, with regular JS
+  console.log("About to create", req.body)
   Coffee.create({
     country: req.body.country,
     roast: req.body.roast,
@@ -122,20 +123,23 @@ app.post("/drinks-create", function (req, res, next) {
 
 app.post("/food-create", function (req, res, next) {
   //This is just a function, with regular JS
+  console.log("About to create", req.body)
   Food.create({
-    name: req.body.country,
-    category: req.body.roast,
+    name: req.body.name,
+    category: req.body.category,
     description: req.body.description,
     price: req.body.price,
     calories: req.body.calories,
     ingredients: req.body.ingredients,
   })
-    .then(function (createdCoffee) {
+    .then(function (createdFood) {
+      // console.log(createdFood)
       //for redirect, this is hitting a url
       res.redirect("/food");
       // res.render("index");
     })
     .catch(function (error) {
+      console.log("failed", error.message)
       // res.render("index");
       res.redirect("/food");
     });

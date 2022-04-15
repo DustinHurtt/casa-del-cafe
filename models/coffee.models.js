@@ -8,7 +8,7 @@ const coffeeSchema =  new Schema({
     },
     roast: {
         type: String,
-        enum: ["dark", "light"],
+        enum: ["Dark", "Light"],
         required: true
     },
     description: {

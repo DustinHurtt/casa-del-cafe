@@ -1,0 +1,10 @@
+<h2>This is the food page</h2>
+<ul>
+    {{#each food}}
+
+    <h3>{{this.food}}</h3>
+    <p> </p>
+    
+    <a href="/food/{{this._id}}"> Food </a>
+    {{/each}}
+</ul>

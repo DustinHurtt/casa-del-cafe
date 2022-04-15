@@ -87,34 +87,34 @@ const Drinks = require('../models/drinks.models')
 
 let newDrinks = [
     {
-    name: "Jhon" ,
-    temperature: "Smith",
-    description: "Miami",
-    price: 33136,
+    name: "Americano" ,
+    temperature: "Hot",
+    description: "prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee.",
+    price: 5.99,
   },
   {
-    name: "Jhon" ,
-    temperature: "Smith",
-    description: "Miami",
-    price: 33136,
+    name: "Capuccino" ,
+    temperature: "Hot",
+    description: "the perfect balance of espresso, steamed milk and foam",
+    price: 5.50,
   },
   {
-    name: "Jhon" ,
-    temperature: "Smith",
-    description: "Miami",
-    price: 33136,
+    name: "Latte" ,
+    temperature: "Cold",
+    description: " milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
+    price: 5.50,
   },
   {
-    name: "Jhon" ,
-    temperature: "Smith",
-    description: "Miami",
-    price: 33136,
+    name: "Mocha" ,
+    temperature: "Cold",
+    description: "is combined with a chocolate powder or syrup, followed by milk or cream. ",
+    price: 6.50,
   },
   {
-    name: "Jhon" ,
-    temperature: "Smith",
-    description: "Miami",
-    price: 33136,
+    name: "Espresso" ,
+    temperature: "Hot",
+    description: "a concentrated form of coffee served in small, strong shots ",
+    price: 4.50,
   }
   ]
 

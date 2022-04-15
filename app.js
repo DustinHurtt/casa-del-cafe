@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const Coffee = require("./models/coffee.models");
+const Drinks = require("./models/drinks.models");
+const Food = require("./models/food.models");
+
 const mongoose = require ('mongoose') ;
 
 // var indexRouter = require('./routes/index');
@@ -62,8 +66,73 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.post("/coffee-create", function (req, res, next) {
+  //This is just a function, with regular JS
+  Coffee.create({
+    country: req.body.country,
+    roast: req.body.roast,
+    description: req.body.description,
+    price: req.body.price,
+  })
+    .then(function (createdCoffee) {
+      //for redirect, this is hitting a url
+      res.redirect("/coffee");
+      // res.render("index");
+    })
+    .catch(function (error) {
+      // res.render("index");
+      res.redirect("/coffee");
+    });
+
+  // res.render("index", { title: "Express" });
+});
+
+app.post("/drinks-create", function (req, res, next) {
+  //This is just a function, with regular JS
+  Drinks.create({
+    name: req.body.name,
+    temperature: req.body.temperature,
+    description: req.body.description,
+    price: req.body.price,
+  })
+    .then(function (createdDrinks) {
+      //for redirect, this is hitting a url
+      res.redirect("/coffee");
+      // res.render("index");
+    })
+    .catch(function (error) {
+      // res.render("index");
+      res.redirect("/coffee");
+    });
+
+  // res.render("index", { title: "Express" });
+});
+
+app.post("/food-create", function (req, res, next) {
+  //This is just a function, with regular JS
+  Food.create({
+    name: req.body.country,
+    category: req.body.roast,
+    description: req.body.description,
+    price: req.body.price,
+    calories: req.body.calories,
+    ingredients: req.body.ingredients,
+  })
+    .then(function (createdCoffee) {
+      //for redirect, this is hitting a url
+      res.redirect("/food");
+      // res.render("index");
+    })
+    .catch(function (error) {
+      // res.render("index");
+      res.redirect("/food");
+    });
+
+  // res.render("index", { title: "Express" });
+});
+
 mongoose
-  .connect('mongodb://localhost/exampleApp')
+  .connect('mongodb://localhost/CasaDelCafe')
   .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
   .catch(err => console.error('Error connecting to mongo', err));
 
